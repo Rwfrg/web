@@ -517,6 +517,7 @@ section {
 
   .hero .hero-img img {
     width: 80%;
+    height: 270px;
   }
 }
 
@@ -709,6 +710,7 @@ section {
 @media (max-width: 768px) {
   .features .feture-tabs h3 {
     font-size: 28px;
+    
   }
 }
 
@@ -786,6 +788,20 @@ section {
 .features .feature-icons .content .icon-box p {
   font-size: 15px;
   color: #848484;
+}
+@media (max-width: 768px) {
+  .features .feature-icons .content .icon-box p {
+  padding: 7px;
+  font-size: 15px;
+  color: #848484;
+  }
+  .features .feature-icons .content .icon-box i {
+    font-size: 44px;
+    line-height: 44px;
+    color: #00afef;
+    margin-right: 15px;
+    padding-left: 5px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -2419,4 +2435,14 @@ section {
     width: 28%;
     display: none;
   }
+
+  .ods{
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+  
 }
