@@ -8,16 +8,36 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-
-
-
 :root {
   scroll-behavior: smooth;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  background: url(../img/finish.png) top center no-repeat;
 }
 
 a {
@@ -127,6 +147,8 @@ section {
   color: #8894f6;
   content: "/";
 }
+
+
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -449,7 +471,7 @@ section {
 .hero {
   width: 100%;
   height: 100vh;
-  /* background: url(../img/hero-bg.png) top center no-repeat; */
+
   background-size: cover;
 }
 
@@ -457,6 +479,8 @@ section {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
+  
+
   color: #000000;
 }
 
@@ -496,6 +520,18 @@ section {
 
 .hero .hero-img {
   text-align: right;
+  animation: updown 3s linear infinite;
+}
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
 }
 
 @media (min-width: 1024px) {
@@ -513,11 +549,12 @@ section {
   .hero .hero-img {
     text-align: center;
     margin-top: 80px;
+  
   }
 
   .hero .hero-img img {
     width: 80%;
-    height: 270px;
+    height: 70%;
   }
 }
 
@@ -536,6 +573,9 @@ section {
 
   .hero .hero-img img {
     width: 100%;
+    height: 150%;
+    margin-bottom: -150px;
+    
   }
 }
 
@@ -546,12 +586,13 @@ section {
 # About
 --------------------------------------------------------------*/
 .about .content {
-  background-color: #f4fafc;
+  background-color: 	#cceffc;
   padding: 40px;
+  font-family: cursive;
 }
 
 .about h3 {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 700;
   color: #00afef;
   text-transform: uppercase;
@@ -566,6 +607,7 @@ section {
 .about p {
   margin: 15px 0 30px 0;
   line-height: 24px;
+  font-size: 18px;
 }
 
 .about .btn-read-more {
@@ -598,12 +640,14 @@ section {
 /*--------------------------------------------------------------
 # Values
 --------------------------------------------------------------*/
+
 .values .box {
   padding: 30px;
   box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
   text-align: center;
   transition: 0.3s;
   height: 100%;
+ 
 }
 
 .values .box img {
@@ -710,7 +754,6 @@ section {
 @media (max-width: 768px) {
   .features .feture-tabs h3 {
     font-size: 28px;
-    
   }
 }
 
@@ -788,20 +831,6 @@ section {
 .features .feature-icons .content .icon-box p {
   font-size: 15px;
   color: #848484;
-}
-@media (max-width: 768px) {
-  .features .feature-icons .content .icon-box p {
-  padding: 7px;
-  font-size: 15px;
-  color: #848484;
-  }
-  .features .feature-icons .content .icon-box i {
-    font-size: 44px;
-    line-height: 44px;
-    color: #00afef;
-    margin-right: 15px;
-    padding-left: 5px;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -1612,7 +1641,7 @@ section {
 --------------------------------------------------------------*/
 .contact .info-box {
   color: #444444;
-  background: #fafbff;
+  background: 		#e6f7fd;
   padding: 30px;
 }
 
@@ -1637,7 +1666,7 @@ section {
 }
 
 .contact .php-email-form {
-  background: #fafbff;
+  background: 	#e6f7fd;
   padding: 30px;
   height: 100%;
 }
@@ -2249,7 +2278,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  background: #f6f9ff;
+  background: 	#e6f7fd;
   padding: 0 0 30px 0;
   font-size: 14px;
 }
@@ -2426,6 +2455,128 @@ section {
 }
 
 
+.wrapper {
+  height: 100vh;
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+}
+
+.typing-demo {
+  width: 22ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+
+
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+
+
+
+.card {
+  
+  width: var(--card-width);
+  height: var(--card-height);
+  
+  
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.2em;
+  
+  cursor: pointer;
+  font-family: cursive;
+}
+
+.card:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+}
+.card:hover:before, .card:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+.boxtz{
+  padding-bottom: 150px;
+}
+
 @media screen and (max-width: 600px) {
   .azx {
     visibility: hidden;
@@ -2446,3 +2597,4 @@ section {
   }
   
 }
+
