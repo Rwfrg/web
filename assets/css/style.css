@@ -272,12 +272,12 @@ section {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #cb6ce6;
+  color: #00afef;
 }
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: #00afef;
+  background: #cb6ce6;
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 4px;
