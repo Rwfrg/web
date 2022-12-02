@@ -588,7 +588,7 @@ section {
 .about .content {
   background-color: 	#cceffc;
   padding: 40px;
-  font-family: cursive;
+  font-family: "Nunito", sans-serif;
 }
 
 .about h3 {
@@ -647,6 +647,7 @@ section {
   text-align: center;
   transition: 0.3s;
   height: 100%;
+  font-family: "Nunito", sans-serif;;
  
 }
 
