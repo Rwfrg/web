@@ -12,8 +12,52 @@
   scroll-behavior: smooth;
 }
 
+#loading{
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.player{
+  margin-left: -120px;
+  height: 800px;
+  width: 800px;
+}
 
 
+.loader {
+  width: 50px;
+  height: 50px;
+
+  position: absolute;
+ 
+  animation: loader 2s infinite ease-in-out;
+}
+.loader span {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 4px solid #0B1B48;
+}
+.loader span:nth-child(1) {
+  animation: span-1 2s ease-in-out infinite;
+}
+.loader span:nth-child(2) {
+  animation: span-2 2s ease-in-out infinite;
+}
+.loader span:nth-child(3) {
+  animation: span-3 2s ease-in-out infinite;
+}
+.loader span:nth-child(4) {
+  animation: span-4 2s ease-in-out infinite;
+}
 
 
 
@@ -37,7 +81,8 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
-  background: url(../img/finish.png) top center no-repeat;
+  
+
 }
 
 a {
@@ -56,7 +101,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -287,7 +332,7 @@ section {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #cb6ce6;
+  background: #5969f3;
 }
 
 .navbar .dropdown ul {
@@ -470,14 +515,15 @@ section {
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  height: 100vh;
-
+  
+  background: #f5f8fd url("../img/intro-bg.jpg") center top no-repeat;
   background-size: cover;
+  padding: 0px 0 0 0;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   
 
@@ -487,7 +533,7 @@ section {
 .hero h2 {
   color: #444444;
   margin: 15px 0 0 0;
-  font-size: 26px;
+  font-size: 20px;
 }
 
 .hero .btn-get-started {
@@ -497,7 +543,7 @@ section {
   border-radius: 4px;
   transition: 0.5s;
   color: #fff;
-  background: #cb6ce6;  
+  background: #00afef;  
   box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
 }
 
@@ -514,6 +560,7 @@ section {
   transition: 0.3s;
 }
 
+
 .hero .btn-get-started:hover i {
   transform: translateX(5px);
 }
@@ -521,6 +568,10 @@ section {
 .hero .hero-img {
   text-align: right;
   animation: updown 3s linear infinite;
+  
+}
+.hero .hero-img img{
+  width: 100%;
 }
 @keyframes updown {
     0% {
@@ -556,6 +607,7 @@ section {
     width: 80%;
     height: 70%;
   }
+ 
 }
 
 @media (max-width: 768px) {
@@ -564,20 +616,87 @@ section {
   }
 
   .hero h1 {
-    font-size: 32px;
+    font-size: 25px;
   }
 
   .hero h2 {
-    font-size: 24px;
+    font-size: 16px;
   }
 
   .hero .hero-img img {
-    width: 100%;
-    height: 150%;
-    margin-bottom: -150px;
+    width: 70%;
     
   }
+  .player{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    margin-left: -80px;
+    margin-top: -30pxg;
+  }
+  
 }
+
+.hero .icon-boxes {
+  padding-bottom: 60px;
+}
+
+@media (min-width: 1200px) {
+  .hero .icon-boxes:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(50% + 20px);
+    background-color: #fff;
+  }
+}
+
+.hero .icon-box {
+  padding: 60px 30px;
+  position: relative;
+  overflow: hidden;
+  background: #00afef;
+  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.hero .icon-box .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.hero .icon-box .title a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.hero .icon-box .icon {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  font-size: 48px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hero .icon-box:hover {
+  background: #009786;
+}
+
+.hero .icon-box:hover .title a,
+.hero .icon-box:hover .icon {
+  color: #fff;
+}
+
 
 /*--------------------------------------------------------------
 # Index Page
@@ -585,69 +704,29 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.about .content {
-  background-color: 	#cceffc;
-  padding: 40px;
-  font-family: "Nunito", sans-serif;
-}
 
-.about h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #00afef;
-  text-transform: uppercase;
-}
-
-.about h2 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #012970;
-}
-
-.about p {
-  margin: 15px 0 30px 0;
-  line-height: 24px;
-  font-size: 18px;
-}
-
-.about .btn-read-more {
-  line-height: 0;
-  padding: 15px 40px;
-  border-radius: 4px;
-  transition: 0.5s;
-  color: #fff;
-  background: #4154f1;
-  box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
-}
-
-.about .btn-read-more span {
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-
-.about .btn-read-more i {
-  margin-left: 5px;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.about .btn-read-more:hover i {
-  transform: translateX(5px);
-}
 
 /*--------------------------------------------------------------
 # Values
 --------------------------------------------------------------*/
+.values {
+  width: 100%;
+  height: 100%;
+  background: #f5f8fd url("../img/intro-bg.jpg") center top no-repeat;
+  
+  
+  background-size: cover;
+  
+
+}
 
 .values .box {
   padding: 30px;
-  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+  box-shadow: 0px 0 50px rgba(0, 86, 224, 0.08);
   text-align: center;
   transition: 0.3s;
   height: 100%;
-  font-family: "Nunito", sans-serif;;
+  background-color: white;
  
 }
 
@@ -837,6 +916,10 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+.boxtz{
+  margin-top: -120px;
+}
+
 .services .service-box {
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
   height: 100%;
@@ -2542,7 +2625,8 @@ section {
     z-index: -1;
     top: -1%;
     left: -2%;
-    animation: spin 2.5s linear infinite;
+    animation: none;
+   
 }
 
 .card::after {
@@ -2565,18 +2649,9 @@ section {
   animation: spin 2.5s linear infinite;
 }
 
-@keyframes spin {
-  0% {
-    --rotate: 0deg;
-  }
-  100% {
-    --rotate: 360deg;
-  }
-}
 
-.boxtz{
-  padding-bottom: 150px;
-}
+
+
 
 @media screen and (max-width: 600px) {
   .azx {
@@ -2597,5 +2672,295 @@ section {
     display: none;
   }
   
+  
 }
 
+.svgBox svg {
+  fill :none;
+  stroke:#222;
+  stroke-width: 10;
+  transform: scale (2);
+  stroke : url(#col);
+  stroke-dasharray:60 172;
+  stroke-linecap: round;
+  animation: oj 4s linear infinite;
+
+
+}
+
+@keyframes oj {
+ 0%{
+  stroke-dashoffset:0;
+ }
+ 100%{
+   stroke-dashoffset:232;
+ }
+}
+
+.svgBox svg :nth-of-type(1){
+animation: none;
+  fill :none;
+  stroke:#222;
+  stroke-width: 10;
+  transform: scale (2);
+  stroke-dasharray:none;
+
+}
+.infinity-text{
+    color:white;
+    text-align: center;
+   font-size: 40px;
+   font-family: "Nunito", sans-serif;
+
+
+}
+
+.aboutx{
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  background:#111;
+}
+
+.about .content h3 {
+  font-weight: 700;
+  font-size: 50px;
+  color: #5f687b;
+}
+
+.about .content ul {
+  list-style: none;
+  color: #6e727d;;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding-bottom: 10px;
+}
+
+.about .content ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #16df7e;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+.about .image{
+  margin-top: -100px;
+}
+
+
+.faq {
+  padding-top: 80px;
+}
+
+.faq .accordion-item {
+  border: 0;
+  margin-bottom: 10px;
+}
+
+.faq .accordion-collapse {
+  border: 0;
+}
+
+.faq .accordion-button {
+  padding: 15px 30px 20px 60px;
+  font-weight: 600;
+  border: 0;
+  font-size: 18px;
+  color: var(--color-default);
+  text-align: left;
+  background: rgba(14, 29, 52, 0.03);
+  border-radius: 5px;
+}
+
+.faq .accordion-button:focus {
+  box-shadow: none;
+}
+
+.faq .accordion-button:not(.collapsed) {
+  color: var(--color-primary);
+  border-bottom: 0;
+  box-shadow: none;
+}
+
+.faq .question-icon {
+  position: absolute;
+  top: 14px;
+  left: 25px;
+  font-size: 20px;
+  color: var(--color-primary);
+}
+
+.faq .accordion-button:after {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.faq .accordion-body {
+  padding: 0 30px 25px 60px;
+  border: 0;
+  background: rgba(14, 29, 52, 0.03);
+  border-radius: 5px;
+}
+
+
+.carousel-content {
+  position: absolute;
+  /*to center the content horizontally and vertically*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  z-index: 50;
+}
+.carousel-heading {
+  font-size: 3rem;
+  color: #308d46;
+  margin-bottom: 1rem;
+}
+/*----- end of carousel content stylings ----- */
+
+/* ----- slideshow stylings ----- */
+.slideshow {
+  height: 100%;
+  overflow: hidden; /* to hide slides in x-direction */
+  position: relative;
+}
+/* wrapper which wraps all the slideshow images stylings */
+.slideshow-wrapper {
+  display: flex;
+  /* We give it width as 400% because we are making a 
+     4 image carousel. If you want to make for example, 
+     5 images carousel, then give width as 500%. */
+  width: 400%;
+  height: 100%;
+  position: relative;
+  /* you can change the animation settings from below */
+  animation: slideshow 20s infinite;
+}
+/* define width and height for images*/
+.slide {
+  width: 100%;
+  height: 100%;
+}
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+/* @keyframes are used to provide animations
+ We make these settings for 4 image carousel.
+ Make modification according to your needs. */
+@keyframes slideshow {
+  0%  { left: 0; }
+  10% { left: 0; }
+  15% { left: -100%; }
+  25% { left: -100%; }
+  30% { left: -200%; }
+  40% { left: -200%; }
+  45% { left: -300%; }
+  55% { left: -300%; }
+  60% { left: -200%; }
+  70% { left: -200%; }
+  75% { left: -100%; }
+  85% { left: -100%; }
+  90% { left: 0%; }
+}
+/* ----- end of slideshow stylings ----- */
+
+/* ----- carousel control buttons stylings ----- */
+.slide-btn {
+  background-color: #bbb;
+  border-radius: 50%;
+  border: .2rem solid #d38800;
+  width: 1.2rem;
+  height: 1.2rem;
+  outline: none;
+  cursor: pointer;
+  /* stylings for positioning the buttons at
+     the bottom of the carousel */
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 70;
+}
+/* As we provide position as absolute, 
+the buttons places one over the other. 
+So, we have to place them individually
+at their correct positions. */
+.slide-btn-1 {
+  left: 45%;
+}
+.slide-btn-2 {
+  left: 50%;
+}
+.slide-btn-3 {
+  left: 55%;
+}
+.slide-btn-4 {
+  left: 60%;
+}
+/* When we focus on the particular button, 
+the animation stops to that particular image 
+to which the button is associated. */
+.slide-btn-1:focus~.slideshow-wrapper {
+  animation: none;
+  left: 0;
+}
+.slide-btn-2:focus~.slideshow-wrapper {
+  animation: none;
+  left: -100%;
+}
+.slide-btn-3:focus~.slideshow-wrapper {
+  animation: none;
+  left: -200%;
+}
+.slide-btn-4:focus~.slideshow-wrapper {
+  animation: none;
+  left: -300%;
+}
+/* when we focus on the button, the background color changes */
+.slide-btn:focus {
+  background-color: #308d46;
+}
+
+
+
+/*loader */
+
+*{box-sizing:border-box}
+
+@keyframes loader {
+  0% {transform:rotate(-45deg)}
+  50%{transform:rotate(-135deg)}
+  100%{transform:rotate(-225deg)}
+}
+@keyframes span-1 {
+  0% {transform:translate(0);}
+  50%{transform:translate(-50px, 0);border-color:#EE4D68}
+  100%{transform:translate(0);}}
+@keyframes span-2 {
+  0%{transform:translate(0);}
+  50%{transform:translate(50px, 0);border-color:#875678}
+  100%{transform:translate(0);}}
+@keyframes span-3 {
+  0%{transform:translate(0);}
+  50%{transform:translate(0, -50px);border-color:#FF9900}
+  100%{transform:translate(0);}}
+@keyframes span-4 {
+  0%{transform:translate(0);}
+  50%{transform:translate(0, 50px);border-color:#00E4F6}
+  100%{transform:translate(0);}}
+
+
+
+
+  
